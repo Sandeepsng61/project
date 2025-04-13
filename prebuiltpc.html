@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Built PC Builds</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .pc-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pc-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .pc-card:hover {
+            transform: scale(1.05);
+        }
+
+        .pc-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .pc-card h3 {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .pc-card .price {
+            font-size: 16px;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="prebuilt" class="container my-5">
+        <h2 class="text-center">Pre-Built PC Builds</h2>
+        <p class="text-center">We have already configured the best PCs for you.</p>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-success text-center">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+        <div class="pc-container">
+            <div class="pc-card">
+                <img src="{{ url_for('static', filename='pc1.jpeg') }}" alt="SSPC Extreme PC Build">
+                <h3>SSPC Extreme PC Build</h3>
+                <p>Pre-Built PC</p>
+                <span class="price">From ₹140,000</span>
+                <form method="POST" action="{{ url_for('add_to_cart') }}">
+                    <input type="hidden" name="product_id" value="1">
+                    <button type="submit" class="btn btn-primary mt-2">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="pc-card">
+                <img src="{{ url_for('static', filename='budget.jpg') }}" alt="SSPC Budget PC Build">
+                <h3>SSPC Budget PC Build</h3>
+                <p>Pre-Built PC</p>
+                <span class="price">From ₹30,000</span>
+                <form method="POST" action="{{ url_for('add_to_cart') }}">
+                    <input type="hidden" name="product_id" value="2">
+                    <button type="submit" class="btn btn-primary mt-2">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="pc-card">
+                <img src="{{ url_for('static', filename='ultimate.jpg') }}" alt="SSPC Ultimate PC Build">
+                <h3>SSPC Ultimate PC Build</h3>
+                <p>Pre-Built PC</p>
+                <span class="price">From ₹40,000</span>
+                <form method="POST" action="{{ url_for('add_to_cart') }}">
+                    <input type="hidden" name="product_id" value="3">
+                    <button type="submit" class="btn btn-primary mt-2">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="pc-card">
+                <img src="{{ url_for('static', filename='valuepc.jpg') }}" alt="SSPC Value PC Build">
+                <h3>SSPC Value PC Build</h3>
+                <p>Pre-Built PC</p>
+                <span class="price">From ₹50,000</span>
+                <form method="POST" action="{{ url_for('add_to_cart') }}">
+                    <input type="hidden" name="product_id" value="4">
+                    <button type="submit" class="btn btn-primary mt-2">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="pc-card">
+                <img src="{{ url_for('static', filename='pro.jpg') }}" alt="SSPC Pro PC Build">
+                <h3>SSPC Pro PC Build</h3>
+                <p>Pre-Built PC</p>
+                <span class="price">From ₹70,000</span>
+                <form method="POST" action="{{ url_for('add_to_cart') }}">
+                    <input type="hidden" name="product_id" value="5">
+                    <button type="submit" class="btn btn-primary mt-2">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

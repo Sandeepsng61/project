@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your AMD PC</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center">Customize Your AMD PC</h2>
+        <form action="/submit_amd_pc" method="POST">
+            <!-- AMD Motherboard Selection -->
+            <div class="mb-3">
+                <label for="motherboard" class="form-label">Select AMD Motherboard:</label>
+                <select class="form-select" id="motherboard" name="motherboard">
+                    <optgroup label="AM4 - Without WiFi">
+                        <option value="" selected>-- None --</option>
+                        <option value="ASUS Prime B450M-A II - ₹6,500">ASUS Prime B450M-A II - ₹6,500</option>
+                        <option value="Gigabyte B550M DS3H - ₹7,800">Gigabyte B550M DS3H - ₹7,800</option>
+                        <option value="MSI B450 Tomahawk Max II - ₹7,500">MSI B450 Tomahawk Max II - ₹7,500</option>
+                    </optgroup>
+                    <optgroup label="AM4 - With WiFi">
+                        <option value="MSI B550M PRO-VDH WiFi - ₹8,200">MSI B550M PRO-VDH WiFi - ₹8,200</option>
+                        <option value="ASUS TUF B550M-Plus WiFi - ₹9,500">ASUS TUF B550M-Plus WiFi - ₹9,500</option>
+                    </optgroup>
+                    <optgroup label="AM5 - Without WiFi">
+                        <option value="ASRock B650M PG Riptide - ₹13,800">ASRock B650M PG Riptide - ₹13,800</option>
+                        <option value="Gigabyte B650M DS3H - ₹14,500">Gigabyte B650M DS3H - ₹14,500</option>
+                    </optgroup>
+                    <optgroup label="AM5 - With WiFi">
+                        <option value="MSI PRO B650M-A WiFi - ₹15,300">MSI PRO B650M-A WiFi - ₹15,300</option>
+                        <option value="ASUS TUF Gaming B650-PLUS WiFi - ₹17,500">ASUS TUF Gaming B650-PLUS WiFi -
+                            ₹17,500</option>
+                        <option value="Gigabyte B650 AORUS Elite AX - ₹19,200">Gigabyte B650 AORUS Elite AX - ₹19,200
+                        </option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- AMD Processors Selection -->
+            <div class="mb-3">
+                <label for="processor" class="form-label">Select AMD Processor:</label>
+                <select class="form-select" id="processor" name="processor">
+                    <optgroup label="AM4 - Ryzen 3000 & 5000 Series">
+                        <option value="" selected>-- None --</option>
+                        <option value="Ryzen 3 3100 - ₹7,000">Ryzen 3 3100 - ₹7,000</option>
+                        <option value="Ryzen 3 3300X - ₹9,000">Ryzen 3 3300X - ₹9,000</option>
+                        <option value="Ryzen 5 3600 - ₹11,500">Ryzen 5 3600 - ₹11,500</option>
+                        <option value="Ryzen 5 5600 - ₹13,000">Ryzen 5 5600 - ₹13,000</option>
+                        <option value="Ryzen 5 5600X - ₹14,500">Ryzen 5 5600X - ₹14,500</option>
+                        <option value="Ryzen 7 3700X - ₹18,000">Ryzen 7 3700X - ₹18,000</option>
+                        <option value="Ryzen 7 5800X - ₹20,000">Ryzen 7 5800X - ₹20,000</option>
+                        <option value="Ryzen 7 5800X3D - ₹26,000">Ryzen 7 5800X3D - ₹26,000</option>
+                        <option value="Ryzen 9 5900X - ₹29,000">Ryzen 9 5900X - ₹29,000</option>
+                        <option value="Ryzen 9 5950X - ₹38,000">Ryzen 9 5950X - ₹38,000</option>
+                    </optgroup>
+
+                    <optgroup label="AM5 - Ryzen 7000 Series (DDR5)">
+                        <option value="" selected>-- None --</option>
+                        <option value="Ryzen 5 7600 - ₹18,500">Ryzen 5 7600 - ₹18,500</option>
+                        <option value="Ryzen 5 7600X - ₹20,000">Ryzen 5 7600X - ₹20,000</option>
+                        <option value="Ryzen 7 7700 - ₹26,000">Ryzen 7 7700 - ₹26,000</option>
+                        <option value="Ryzen 7 7700X - ₹28,000">Ryzen 7 7700X - ₹28,000</option>
+                        <option value="Ryzen 9 7900 - ₹35,000">Ryzen 9 7900 - ₹35,000</option>
+                        <option value="Ryzen 9 7900X - ₹38,000">Ryzen 9 7900X - ₹38,000</option>
+                        <option value="Ryzen 9 7950X - ₹49,000">Ryzen 9 7950X - ₹49,000</option>
+                        <option value="Ryzen 9 7950X3D - ₹59,000">Ryzen 9 7950X3D - ₹59,000</option>
+                    </optgroup>
+
+                    <optgroup label="APUs (with Radeon Graphics)">
+                        <option value="" selected>-- None --</option>
+                        <option value="Ryzen 5 5600G - ₹12,000">Ryzen 5 5600G - ₹12,000</option>
+                        <option value="Ryzen 7 5700G - ₹18,000">Ryzen 7 5700G - ₹18,000</option>
+                        <option value="Ryzen 5 5600GT - ₹9,500">Ryzen 5 5600GT - ₹9,500</option>
+                        <option value="Ryzen 5 8600G - ₹19,500">Ryzen 5 8600G - ₹19,500</option>
+                        <option value="Ryzen 7 8700G - ₹27,000">Ryzen 7 8700G - ₹27,000</option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- DDR4 RAM -->
+            <div class="mb-3">
+                <label for="ddr4_ram" class="form-label">Select DDR4 RAM:</label>
+                <select class="form-select" id="ddr4_ram" name="ddr4_ram">
+                    <optgroup label="DDR4 RAM">
+                        <option value="" selected>-- None --</option>
+                        <option value="Corsair Vengeance 8GB DDR4 3200MHz - ₹2,200">Corsair Vengeance 8GB DDR4 3200MHz -
+                            ₹2,200</option>
+                        <option value="G.Skill Ripjaws 16GB DDR4 3600MHz - ₹3,800">G.Skill Ripjaws 16GB DDR4 3600MHz -
+                            ₹3,800</option>
+                        <option value="Kingston Fury 32GB DDR4 3600MHz - ₹6,900">Kingston Fury 32GB DDR4 3600MHz -
+                            ₹6,900</option>
+                        <option value="Crucial Ballistix 64GB DDR4 3600MHz - ₹12,800">Crucial Ballistix 64GB DDR4
+                            3600MHz - ₹12,800</option>
+                    </optgroup>
+                    <optgroup label="DDR5 RAM">
+                        <option value="" selected>-- None --</option>
+                        <option value="Corsair Vengeance 32GB DDR5 5600MHz - ₹9,500">Corsair Vengeance 32GB DDR5 5600MHz
+                            - ₹9,500</option>
+                        <option value="G.Skill Trident Z5 32GB DDR5 5200MHz - ₹10,200">G.Skill Trident Z5 32GB DDR5
+                            5200MHz - ₹10,200</option>
+                        <option value="Kingston Fury Beast 64GB DDR5 6000MHz - ₹18,500">Kingston Fury Beast 64GB DDR5
+                            6000MHz - ₹18,500</option>
+                        <option value="Team T-Force Delta RGB DDR5 32GB 6400MHz - ₹11,400">Team T-Force Delta RGB DDR5
+                            32GB 6400MHz - ₹11,400</option>
+                    </optgroup>
+                    <optgroup label="RGB RAM">
+                        <option value="" selected>-- None --</option>
+                        <option value="G.Skill Trident Z5 RGB 64GB DDR5 6000MHz - ₹20,000">G.Skill Trident Z5 RGB 64GB
+                            DDR5 6000MHz - ₹20,000</option>
+                        <option value="Team T-Force Delta RGB DDR4 3600MHz - ₹7,200">Team T-Force Delta RGB DDR4 3600MHz
+                            - ₹7,200</option>
+                        <option value="Corsair Dominator RGB 128GB DDR5 6000MHz - ₹38,000">Corsair Dominator RGB 128GB
+                            DDR5 6000MHz - ₹38,000</option>
+                    </optgroup>
+                    <optgroup label="Dual Channel RAM Kits">
+                        <option value="" selected>-- None --</option>
+                        <option value="Corsair Vengeance 2x8GB DDR4 3200MHz - ₹4,200">Corsair Vengeance 2x8GB DDR4
+                            3200MHz - ₹4,200</option>
+                        <option value="G.Skill Ripjaws 2x16GB DDR4 3600MHz - ₹7,400">G.Skill Ripjaws 2x16GB DDR4 3600MHz
+                            - ₹7,400</option>
+                        <option value="Kingston Fury Beast 2x16GB DDR5 6000MHz - ₹10,800">Kingston Fury Beast 2x16GB
+                            DDR5 6000MHz - ₹10,800</option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- Graphics Card -->
+            <div class="mb-3">
+                <label for="gpu" class="form-label">Select Graphics Card:</label>
+                <select class="form-select" id="gpu" name="gpu">
+                    <optgroup label="-- None --">
+                        <option value="" selected>-- None --</option>
+                    </optgroup>
+
+                    <optgroup label="NVIDIA GeForce RTX 30 Series">
+                        <option value="NVIDIA GeForce RTX 3060 12GB - ₹28,000">NVIDIA GeForce RTX 3060 12GB - ₹28,000
+                        </option>
+                        <option value="NVIDIA GeForce RTX 3060 Ti 8GB - ₹34,000">NVIDIA GeForce RTX 3060 Ti 8GB -
+                            ₹34,000</option>
+                        <option value="NVIDIA GeForce RTX 3070 8GB - ₹42,000">NVIDIA GeForce RTX 3070 8GB - ₹42,000
+                        </option>
+                        <option value="NVIDIA GeForce RTX 3080 10GB - ₹56,000">NVIDIA GeForce RTX 3080 10GB - ₹56,000
+                        </option>
+                        <option value="NVIDIA GeForce RTX 3090 24GB - ₹82,000">NVIDIA GeForce RTX 3090 24GB - ₹82,000
+                        </option>
+                    </optgroup>
+
+                    <optgroup label="NVIDIA GeForce RTX 40 Series">
+                        <option value="NVIDIA GeForce RTX 4060 8GB - ₹28,500">NVIDIA GeForce RTX 4060 8GB - ₹28,500
+                        </option>
+                        <option value="NVIDIA GeForce RTX 4070 12GB - ₹53,000">NVIDIA GeForce RTX 4070 12GB - ₹53,000
+                        </option>
+                        <option value="NVIDIA GeForce RTX 4080 16GB - ₹88,000">NVIDIA GeForce RTX 4080 16GB - ₹88,000
+                        </option>
+                        <option value="NVIDIA GeForce RTX 4090 24GB - ₹1,35,000">NVIDIA GeForce RTX 4090 24GB -
+                            ₹1,35,000</option>
+                    </optgroup>
+
+                    <optgroup label="AMD Radeon RX 6000/7000 Series">
+                        <option value="AMD Radeon RX 6600 8GB - ₹23,000">AMD Radeon RX 6600 8GB - ₹23,000</option>
+                        <option value="AMD Radeon RX 6700 XT 12GB - ₹35,000">AMD Radeon RX 6700 XT 12GB - ₹35,000
+                        </option>
+                        <option value="AMD Radeon RX 6800 16GB - ₹44,000">AMD Radeon RX 6800 16GB - ₹44,000</option>
+                        <option value="AMD Radeon RX 7900 XT 20GB - ₹76,000">AMD Radeon RX 7900 XT 20GB - ₹76,000
+                        </option>
+                        <option value="AMD Radeon RX 7900 XTX 24GB - ₹88,000">AMD Radeon RX 7900 XTX 24GB - ₹88,000
+                        </option>
+                    </optgroup>
+
+                    <optgroup label="Entry-Level / Budget GPUs">
+                        <option value="NVIDIA GeForce GTX 1650 4GB - ₹12,500">NVIDIA GeForce GTX 1650 4GB - ₹12,500
+                        </option>
+                        <option value="NVIDIA GeForce GTX 1660 Super 6GB - ₹18,000">NVIDIA GeForce GTX 1660 Super 6GB -
+                            ₹18,000</option>
+                        <option value="AMD Radeon RX 6400 4GB - ₹11,000">AMD Radeon RX 6400 4GB - ₹11,000</option>
+                        <option value="AMD Radeon RX 6500 XT 4GB - ₹13,000">AMD Radeon RX 6500 XT 4GB - ₹13,000</option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- NVMe SSD -->
+            <div class="mb-3">
+                <label for="nvme_ssd" class="form-label">Select NVMe SSD:</label>
+                <select class="form-select" id="nvme_ssd" name="nvme_ssd">
+                    <optgroup label="-- None --">
+                        <option value="" selected>-- None --</option>
+                    </optgroup>
+
+                    <optgroup label="NVMe Gen 3 SSDs">
+                        <option value="WD Blue SN570 500GB Gen 3 - ₹2,300">WD Blue SN570 500GB Gen 3 - ₹2,300</option>
+                        <option value="Crucial P3 1TB Gen 3 - ₹3,700">Crucial P3 1TB Gen 3 - ₹3,700</option>
+                        <option value="Samsung 970 EVO Plus 1TB Gen 3 - ₹4,900">Samsung 970 EVO Plus 1TB Gen 3 - ₹4,900
+                        </option>
+                        <option value="Kingston NV1 2TB Gen 3 - ₹7,800">Kingston NV1 2TB Gen 3 - ₹7,800</option>
+                    </optgroup>
+
+                    <optgroup label="NVMe Gen 4 SSDs">
+                        <option value="Samsung 980 PRO 500GB Gen 4 - ₹4,200">Samsung 980 PRO 500GB Gen 4 - ₹4,200
+                        </option>
+                        <option value="WD Black SN850X 1TB Gen 4 - ₹6,500">WD Black SN850X 1TB Gen 4 - ₹6,500</option>
+                        <option value="Crucial P5 Plus 1TB Gen 4 - ₹5,800">Crucial P5 Plus 1TB Gen 4 - ₹5,800</option>
+                        <option value="Corsair MP600 PRO LPX 2TB Gen 4 - ₹10,200">Corsair MP600 PRO LPX 2TB Gen 4 -
+                            ₹10,200</option>
+                    </optgroup>
+
+                    <optgroup label="NVMe Gen 5 SSDs">
+                        <option value="Gigabyte AORUS Gen5 1TB - ₹13,000">Gigabyte AORUS Gen5 1TB - ₹13,000</option>
+                        <option value="ADATA Legend 970 2TB Gen 5 - ₹20,000">ADATA Legend 970 2TB Gen 5 - ₹20,000
+                        </option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- SATA SSD -->
+            <div class="mb-3">
+                <label for="sata_ssd" class="form-label">Select SATA SSD:</label>
+                <select class="form-select" id="sata_ssd" name="sata_ssd">
+                    <optgroup label="-- None --">
+                        <option value="" selected>-- None --</option>
+                    </optgroup>
+
+                    <optgroup label="SATA SSDs">
+                        <option value="Kingston A400 240GB SATA - ₹1,300">Kingston A400 240GB SATA - ₹1,300</option>
+                        <option value="Crucial BX500 480GB SATA - ₹2,400">Crucial BX500 480GB SATA - ₹2,400</option>
+                        <option value="Samsung 870 EVO 500GB SATA - ₹3,200">Samsung 870 EVO 500GB SATA - ₹3,200</option>
+                        <option value="WD Blue 1TB SATA - ₹4,500">WD Blue 1TB SATA - ₹4,500</option>
+                        <option value="Crucial MX500 1TB SATA - ₹5,200">Crucial MX500 1TB SATA - ₹5,200</option>
+                        <option value="Samsung 870 QVO 2TB SATA - ₹8,900">Samsung 870 QVO 2TB SATA - ₹8,900</option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- HDD -->
+            <div class="mb-3">
+                <label for="hdd" class="form-label">Select Hard Disk Drive (HDD):</label>
+                <select class="form-select" id="hdd" name="hdd">
+                    <optgroup label="-- None --">
+                        <option value="" selected>-- None --</option>
+                    </optgroup>
+
+                    <optgroup label="HDDs">
+                        <option value="Seagate Barracuda 1TB 7200RPM - ₹2,800">Seagate Barracuda 1TB 7200RPM - ₹2,800
+                        </option>
+                        <option value="WD Blue 1TB 7200RPM - ₹2,900">WD Blue 1TB 7200RPM - ₹2,900</option>
+                        <option value="Toshiba P300 2TB 7200RPM - ₹4,200">Toshiba P300 2TB 7200RPM - ₹4,200</option>
+                        <option value="Seagate Barracuda 2TB 7200RPM - ₹4,400">Seagate Barracuda 2TB 7200RPM - ₹4,400
+                        </option>
+                        <option value="WD Blue 4TB 5400RPM - ₹7,500">WD Blue 4TB 5400RPM - ₹7,500</option>
+                        <option value="Seagate Barracuda 4TB 5400RPM - ₹7,400">Seagate Barracuda 4TB 5400RPM - ₹7,400
+                        </option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- SMPS / Power Supply -->
+            <div class="mb-3">
+                <label for="smps" class="form-label">Select Power Supply (SMPS):</label>
+                <select class="form-select" id="smps" name="smps">
+                    <optgroup label="-- None --">
+                        <option value="" selected>-- None --</option>
+                    </optgroup>
+
+                    <optgroup label="Basic (Non-Modular)">
+                        <option value="Circle 450W Non-Modular PSU - ₹1,200">Circle 450W Non-Modular PSU - ₹1,200
+                        </option>
+                        <option value="Zebronics 500W Non-Modular PSU - ₹1,400">Zebronics 500W Non-Modular PSU - ₹1,400
+                        </option>
+                        <option value="Ant Esports VS500L 500W - ₹1,800">Ant Esports VS500L 500W - ₹1,800</option>
+                    </optgroup>
+
+                    <optgroup label="Bronze Rated (80+ Bronze)">
+                        <option value="Cooler Master MWE 450W Bronze - ₹2,700">Cooler Master MWE 450W Bronze - ₹2,700
+                        </option>
+                        <option value="Corsair CV550 550W Bronze - ₹3,400">Corsair CV550 550W Bronze - ₹3,400</option>
+                        <option value="Antec VP550 550W Bronze - ₹3,100">Antec VP550 550W Bronze - ₹3,100</option>
+                        <option value="Thermaltake Smart BX1 600W Bronze - ₹3,900">Thermaltake Smart BX1 600W Bronze -
+                            ₹3,900</option>
+                    </optgroup>
+
+                    <optgroup label="Gold Rated (80+ Gold)">
+                        <option value="Corsair RM650 650W Gold - ₹6,200">Corsair RM650 650W Gold - ₹6,200</option>
+                        <option value="Cooler Master MWE 750W Gold V2 - ₹6,800">Cooler Master MWE 750W Gold V2 - ₹6,800
+                        </option>
+                        <option value="Antec NeoECO Gold ZEN 700W - ₹6,500">Antec NeoECO Gold ZEN 700W - ₹6,500</option>
+                    </optgroup>
+
+                    <optgroup label="Fully Modular">
+                        <option value="Corsair RM750x 750W Fully Modular - ₹9,000">Corsair RM750x 750W Fully Modular -
+                            ₹9,000</option>
+                        <option value="Seasonic Focus GX-850 850W - ₹10,200">Seasonic Focus GX-850 850W - ₹10,200
+                        </option>
+                        <option value="Cooler Master V850 SFX Gold - ₹11,500">Cooler Master V850 SFX Gold - ₹11,500
+                        </option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- Cabinet Selection -->
+            <div class="mb-3">
+                <label for="cabinet" class="form-label">Select PC Cabinet:</label>
+                <select class="form-select" id="cabinet" name="cabinet">
+                    <optgroup label="-- None --">
+                        <option value="" selected>-- None --</option>
+                    </optgroup>
+
+                    <optgroup label="Budget Cabinets (Non-RGB)">
+                        <option value="Zebronics Zeb-Cronus Mid Tower - ₹1,800">Zebronics Zeb-Cronus Mid Tower - ₹1,800
+                        </option>
+                        <option value="Chiptronex X310B Mid Tower - ₹2,100">Chiptronex X310B Mid Tower - ₹2,100</option>
+                        <option value="Ant Esports ICE-100TG - ₹2,400">Ant Esports ICE-100TG - ₹2,400</option>
+                    </optgroup>
+
+                    <optgroup label="Mid-Range Cabinets (Tempered Glass)">
+                        <option value="Ant Esports ICE-200TG RGB - ₹3,500">Ant Esports ICE-200TG RGB - ₹3,500</option>
+                        <option value="Zebronics Zeb-Blaze RGB - ₹3,800">Zebronics Zeb-Blaze RGB - ₹3,800</option>
+                        <option value="Cooler Master K501L RGB - ₹4,500">Cooler Master K501L RGB - ₹4,500</option>
+                    </optgroup>
+
+                    <optgroup label="High-End Cabinets (Premium Build)">
+                        <option value="Lian Li Lancool 215 RGB - ₹6,000">Lian Li Lancool 215 RGB - ₹6,000</option>
+                        <option value="Cooler Master HAF 500 ARGB - ₹8,200">Cooler Master HAF 500 ARGB - ₹8,200</option>
+                        <option value="Corsair iCUE 4000X RGB TG - ₹9,800">Corsair iCUE 4000X RGB TG - ₹9,800</option>
+                        <option value="NZXT H710 Mid Tower - ₹11,500">NZXT H710 Mid Tower - ₹11,500</option>
+                    </optgroup>
+
+                    <optgroup label="Airflow Focused Cabinets">
+                        <option value="Lian Li LANCOOL 216 Airflow - ₹6,500">Lian Li LANCOOL 216 Airflow - ₹6,500
+                        </option>
+                        <option value="Phanteks Eclipse P400A DRGB - ₹6,800">Phanteks Eclipse P400A DRGB - ₹6,800
+                        </option>
+                        <option value="Fractal Design Meshify C - ₹7,200">Fractal Design Meshify C - ₹7,200</option>
+                    </optgroup>
+
+                    <optgroup label="Mini & Micro ATX Cabinets">
+                        <option value="Cooler Master Q300L Micro ATX - ₹3,400">Cooler Master Q300L Micro ATX - ₹3,400
+                        </option>
+                        <option value="Antec VSK10 Micro ATX - ₹3,100">Antec VSK10 Micro ATX - ₹3,100</option>
+                        <option value="Zebronics Zeb-Micro Mid Tower - ₹2,500">Zebronics Zeb-Micro Mid Tower - ₹2,500
+                        </option>
+                    </optgroup>
+
+                    <optgroup label="Full Tower Cabinets">
+                        <option value="Corsair 7000D Airflow Full Tower - ₹15,000">Corsair 7000D Airflow Full Tower -
+                            ₹15,000</option>
+                        <option value="Cooler Master Cosmos C700M - ₹25,000">Cooler Master Cosmos C700M - ₹25,000
+                        </option>
+                        <option value="Lian Li O11 Dynamic XL ROG Certified - ₹14,800">Lian Li O11 Dynamic XL ROG
+                            Certified - ₹14,800</option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- AIO Liquid Cooler Selection -->
+            <div class="mb-3">
+                <label for="aio_cooler" class="form-label">Select AIO Liquid Cooler:</label>
+                <select class="form-select" id="aio_cooler" name="aio_cooler">
+                    <optgroup label="-- None --">
+                        <option value="" selected>-- None --</option>
+                    </optgroup>
+
+                    <optgroup label="120mm AIO Coolers">
+                        <option value="Cooler Master MasterLiquid ML120L V2 - ₹4,200">Cooler Master MasterLiquid ML120L
+                            V2 - ₹4,200</option>
+                        <option value="Corsair H60x RGB ELITE 120mm - ₹5,100">Corsair H60x RGB ELITE 120mm - ₹5,100
+                        </option>
+                        <option value="DeepCool GAMMAXX L120 V2 - ₹3,800">DeepCool GAMMAXX L120 V2 - ₹3,800</option>
+                    </optgroup>
+
+                    <optgroup label="240mm AIO Coolers">
+                        <option value="Cooler Master ML240L RGB V2 - ₹6,200">Cooler Master ML240L RGB V2 - ₹6,200
+                        </option>
+                        <option value="Corsair iCUE H100i ELITE CAPELLIX - ₹9,800">Corsair iCUE H100i ELITE CAPELLIX -
+                            ₹9,800</option>
+                        <option value="DeepCool LS520 RGB - ₹7,000">DeepCool LS520 RGB - ₹7,000</option>
+                        <option value="Lian Li Galahad AIO 240 RGB - ₹8,500">Lian Li Galahad AIO 240 RGB - ₹8,500
+                        </option>
+                    </optgroup>
+
+                    <optgroup label="360mm AIO Coolers">
+                        <option value="Cooler Master MasterLiquid ML360R RGB - ₹10,200">Cooler Master MasterLiquid
+                            ML360R RGB - ₹10,200</option>
+                        <option value="Corsair iCUE H150i RGB ELITE - ₹13,500">Corsair iCUE H150i RGB ELITE - ₹13,500
+                        </option>
+                        <option value="NZXT Kraken Elite 360 RGB - ₹14,800">NZXT Kraken Elite 360 RGB - ₹14,800</option>
+                        <option value="Lian Li Galahad II Trinity 360 RGB - ₹12,200">Lian Li Galahad II Trinity 360 RGB
+                            - ₹12,200</option>
+                    </optgroup>
+
+                    <optgroup label="Premium AIO Coolers (Display/RGB/Performance)">
+                        <option value="NZXT Kraken Z63 LCD 280mm - ₹17,000">NZXT Kraken Z63 LCD 280mm - ₹17,000</option>
+                        <option value="Corsair iCUE H170i ELITE LCD XT - ₹22,000">Corsair iCUE H170i ELITE LCD XT -
+                            ₹22,000</option>
+                        <option value="ASUS ROG Ryuo III 360 ARGB LCD - ₹21,500">ASUS ROG Ryuo III 360 ARGB LCD -
+                            ₹21,500</option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- CPU Air Cooler Selection -->
+            <div class="mb-3">
+                <label for="cpu_cooler" class="form-label">Select CPU Air Cooler:</label>
+                <select class="form-select" id="cpu_cooler" name="cpu_cooler">
+                    <optgroup label="-- None --">
+                        <option value="" selected>-- None --</option>
+                    </optgroup>
+
+                    <optgroup label="Basic CPU Coolers">
+                        <option value="DeepCool GAMMAXX 300 - ₹1,200">DeepCool GAMMAXX 300 - ₹1,200</option>
+                        <option value="Cooler Master Hyper T20 - ₹1,500">Cooler Master Hyper T20 - ₹1,500</option>
+                        <option value="Ant Esports ICE-C612 - ₹1,000">Ant Esports ICE-C612 - ₹1,000</option>
+                    </optgroup>
+
+                    <optgroup label="Mid-Range Air Coolers">
+                        <option value="Cooler Master Hyper 212 Black Edition - ₹2,700">Cooler Master Hyper 212 Black
+                            Edition - ₹2,700</option>
+                        <option value="DeepCool GAMMAXX 400 V2 - ₹2,200">DeepCool GAMMAXX 400 V2 - ₹2,200</option>
+                        <option value="Thermaltake UX100 ARGB - ₹1,800">Thermaltake UX100 ARGB - ₹1,800</option>
+                    </optgroup>
+
+                    <optgroup label="High-Performance Air Coolers">
+                        <option value="Noctua NH-U12S Redux - ₹4,200">Noctua NH-U12S Redux - ₹4,200</option>
+                        <option value="DeepCool AK620 - ₹5,300">DeepCool AK620 - ₹5,300</option>
+                        <option value="be quiet! Dark Rock Pro 4 - ₹7,200">be quiet! Dark Rock Pro 4 - ₹7,200</option>
+                    </optgroup>
+
+                    <optgroup label="RGB & Premium Air Coolers">
+                        <option value="Cooler Master Hyper 212 Halo Black ARGB - ₹3,200">Cooler Master Hyper 212 Halo
+                            Black ARGB - ₹3,200</option>
+                        <option value="DeepCool AS500 Plus ARGB - ₹4,800">DeepCool AS500 Plus ARGB - ₹4,800</option>
+                        <option value="Cooler Master MA620P RGB - ₹4,500">Cooler Master MA620P RGB - ₹4,500</option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- Wi-Fi Adapter Selection -->
+            <div class="mb-3">
+                <label for="wifi_adapter" class="form-label">Select Wi-Fi Adapter:</label>
+                <select class="form-select" id="wifi_adapter" name="wifi_adapter">
+                    <optgroup label="-- None --">
+                        <option value="" selected>-- None --</option>
+                    </optgroup>
+
+                    <optgroup label="Basic USB Wi-Fi Adapters">
+                        <option value="TP-Link TL-WN725N 150Mbps Nano USB - ₹500">TP-Link TL-WN725N 150Mbps Nano USB -
+                            ₹500</option>
+                        <option value="Tenda W311MI 150Mbps Wireless N Nano - ₹550">Tenda W311MI 150Mbps Wireless N Nano
+                            - ₹550</option>
+                        <option value="D-Link DWA-131 300Mbps USB Adapter - ₹750">D-Link DWA-131 300Mbps USB Adapter -
+                            ₹750</option>
+                    </optgroup>
+
+                    <optgroup label="Mid-Range USB Dual Band Adapters">
+                        <option value="TP-Link Archer T2U AC600 Dual Band USB - ₹1,200">TP-Link Archer T2U AC600 Dual
+                            Band USB - ₹1,200</option>
+                        <option value="D-Link DWA-171 AC600 Dual Band USB - ₹1,100">D-Link DWA-171 AC600 Dual Band USB -
+                            ₹1,100</option>
+                        <option value="Tenda U12 AC1300 Dual Band USB - ₹1,500">Tenda U12 AC1300 Dual Band USB - ₹1,500
+                        </option>
+                    </optgroup>
+
+                    <optgroup label="High-Speed USB Wi-Fi Adapters">
+                        <option value="TP-Link Archer T3U AC1300 High Gain - ₹1,800">TP-Link Archer T3U AC1300 High Gain
+                            - ₹1,800</option>
+                        <option value="Asus USB-AC58 AC1300 Dual Band - ₹2,000">Asus USB-AC58 AC1300 Dual Band - ₹2,000
+                        </option>
+                        <option value="Netgear A6210 AC1200 USB 3.0 - ₹2,400">Netgear A6210 AC1200 USB 3.0 - ₹2,400
+                        </option>
+                    </optgroup>
+
+                    <optgroup label="PCIe Wi-Fi Adapters">
+                        <option value="TP-Link Archer T6E AC1300 PCIe - ₹2,800">TP-Link Archer T6E AC1300 PCIe - ₹2,800
+                        </option>
+                        <option value="Asus PCE-AC51 AC750 Dual Band PCIe - ₹2,300">Asus PCE-AC51 AC750 Dual Band PCIe -
+                            ₹2,300</option>
+                        <option value="Gigabyte GC-WBAX200 Wi-Fi 6 PCIe - ₹3,600">Gigabyte GC-WBAX200 Wi-Fi 6 PCIe -
+                            ₹3,600</option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- Extra Case Fans Selection -->
+            <div class="mb-3">
+                <label class="form-label">Select Extra Case Fans:</label>
+                <div id="fan-container">
+                    <div class="input-group mb-2">
+                        <select class="form-select" name="extra_fans[]">
+                            <option value="" selected>-- None --</option>
+                            <optgroup label="ARGB Fans (Single)">
+                                <option value="Cooler Master MF120 Halo ARGB - ₹1,100">Cooler Master MF120 Halo ARGB - ₹1,100</option>
+                                <option value="DeepCool CF120 ARGB - ₹950">DeepCool CF120 ARGB - ₹950</option>
+                                <option value="Ant Esports Superflow 120 ARGB - ₹750">Ant Esports Superflow 120 ARGB - ₹750</option>
+                                <option value="Zebronics Zeb-RF120 ARGB - ₹690">Zebronics Zeb-RF120 ARGB - ₹690</option>
+                            </optgroup>
+                            <optgroup label="ARGB Fans (Triple Pack)">
+                                <option value="Cooler Master MF120 Halo 3-in-1 ARGB - ₹2,999">Cooler Master MF120 Halo 3-in-1 ARGB - ₹2,999</option>
+                                <option value="DeepCool CF120 3-in-1 ARGB - ₹2,700">DeepCool CF120 3-in-1 ARGB - ₹2,700</option>
+                                <option value="Ant Esports Superflow ARGB 3-Pack - ₹1,950">Ant Esports Superflow ARGB 3-Pack - ₹1,950</option>
+                            </optgroup>
+                            <optgroup label="RGB Fans (Single/Fixed Color)">
+                                <option value="Circle CF-12 RGB Fan - ₹600">Circle CF-12 RGB Fan - ₹600</option>
+                                <option value="Zebronics Zeb-RL120 RGB Fan - ₹550">Zebronics Zeb-RL120 RGB Fan - ₹550</option>
+                            </optgroup>
+                            <optgroup label="Non-RGB / Silent Performance Fans">
+                                <option value="Noctua NF-P12 Redux-1700 PWM - ₹950">Noctua NF-P12 Redux-1700 PWM - ₹950</option>
+                                <option value="Arctic F12 Silent 120mm - ₹450">Arctic F12 Silent 120mm - ₹450</option>
+                                <option value="DeepCool XFAN 120 - ₹400">DeepCool XFAN 120 - ₹400</option>
+                            </optgroup>
+                        </select>
+                        <button class="btn btn-success add-fan" type="button">+</button>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const fanContainer = document.getElementById('fan-container');
+            
+                    fanContainer.addEventListener('click', function (e) {
+                        if (e.target.classList.contains('add-fan')) {
+                            const newRow = e.target.closest('.input-group').cloneNode(true);
+                            newRow.querySelector('select').value = "";
+                            newRow.querySelector('.add-fan').outerHTML = '<button class="btn btn-danger remove-fan" type="button">−</button>';
+                            fanContainer.appendChild(newRow);
+                        } else if (e.target.classList.contains('remove-fan')) {
+                            e.target.closest('.input-group').remove();
+                        }
+                    });
+                });
+            </script>
+            
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-danger">Build My AMD PC</button>
+            </div>
+        </form>
+        <!-- 🟢 YAHAN ADD KAR YE -->
+        <div class="container mt-4" id="summary" style="display: none;">
+            <h3 class="text-center mb-3">🛠️ Your Build Summary</h3>
+            <ul class="list-group mb-3" id="summaryList"></ul>
+            <h4 class="text-end text-success">Total: ₹<span id="totalPrice">0</span></h4>
+            <div class="text-end mt-3">
+                <a href="/checkout" class="btn btn-success btn-lg">Proceed to Checkout</a>
+            </div>
+
+            <script>
+                // 🟡 JavaScript to calculate & display summary
+    document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const selectElements = document.querySelectorAll("select");
+        const summaryList = document.getElementById("summaryList");
+        const summaryDiv = document.getElementById("summary");
+        const totalPriceEl = document.getElementById("totalPrice");
+
+        let total = 0;
+        let cart = []; // ✅ create cart array
+        summaryList.innerHTML = "";
+
+        selectElements.forEach(select => {
+            const selectedOption = select.options[select.selectedIndex];
+            const value = selectedOption.value;
+            if (value && value !== "-- None --") {
+                const namePrice = value.split(" - ₹");
+                const name = namePrice[0];
+                const price = parseInt(namePrice[1].replace(/[^0-9]/g, "") || "0");
+
+                // ✅ Add to cart array
+                cart.push({ name: name, price: price });
+
+                const listItem = document.createElement("li");
+                listItem.className = "list-group-item d-flex justify-content-between align-items-center";
+                listItem.innerHTML = `
+                    <span>${name}</span>
+                    <span class="badge bg-primary rounded-pill">₹${price}</span>
+                `;
+                summaryList.appendChild(listItem);
+
+                total += price;
+            }
+        });
+
+        totalPriceEl.textContent = total;
+        summaryDiv.style.display = "block";
+        summaryDiv.scrollIntoView({ behavior: "smooth" });
+
+        // ✅ Save to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+    });
+</script>
+
+</body>
+
+</html>

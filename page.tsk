@@ -1,0 +1,116 @@
+import ImageSlider from "../image-slider"
+
+export default function Page() {
+  return <ImageSlider />
+}
+
+"use client"
+
+import { useEffect } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
+
+export default function ImageSlider() {
+  useEffect(() => {
+    // Initialize Bootstrap carousel
+    const initCarousel = async () => {
+      // Dynamic import to avoid SSR issues
+      const bootstrap = await import("bootstrap")
+
+      // Initialize all carousels on the page
+      const carouselElements = document.querySelectorAll(".carousel")
+      carouselElements.forEach((carouselEl) => {
+        new bootstrap.Carousel(carouselEl, {
+          interval: 5000,
+          wrap: true,
+        })
+      })
+    }
+
+    initCarousel()
+  }, [])
+
+  return (
+    <div className="container my-5">
+      <div id="imageSlider" className="carousel slide" data-bs-ride="carousel">
+        {/* Indicators */}
+        <div className="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#imageSlider"
+            data-bs-slide-to="0"
+            className="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        {/* Slides */}
+        <div className="carousel-inner rounded-lg shadow-lg">
+          <div className="carousel-item active">
+            <div className="position-relative" style={{ height: "400px" }}>
+              <Image
+                src="/placeholder.svg?height=800&width=1200"
+                alt="First slide"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="carousel-caption d-none d-md-block">
+                <h5 className="text-white font-bold text-xl">First Slide</h5>
+                <p className="text-white">Some description for the first slide.</p>
+              </div>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <div className="position-relative" style={{ height: "400px" }}>
+              <Image src="/placeholder.svg?height=800&width=1200" alt="Second slide" fill className="object-cover" />
+              <div className="carousel-caption d-none d-md-block">
+                <h5 className="text-white font-bold text-xl">Second Slide</h5>
+                <p className="text-white">Some description for the second slide.</p>
+              </div>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <div className="position-relative" style={{ height: "400px" }}>
+              <Image src="/placeholder.svg?height=800&width=1200" alt="Third slide" fill className="object-cover" />
+              <div className="carousel-caption d-none d-md-block">
+                <h5 className="text-white font-bold text-xl">Third Slide</h5>
+                <p className="text-white">Some description for the third slide.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Navigation arrows */}
+        <button className="carousel-control-prev" type="button" data-bs-target="#imageSlider" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon bg-black bg-opacity-50 rounded-circle p-3" aria-hidden="true">
+            <ChevronLeft className="h-6 w-6 text-white" />
+          </span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#imageSlider" data-bs-slide="next">
+          <span className="carousel-control-next-icon bg-black bg-opacity-50 rounded-circle p-3" aria-hidden="true">
+            <ChevronRight className="h-6 w-6 text-white" />
+          </span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  )
+}
+
+import "bootstrap/dist/css/bootstrap.min.css"
+import ImageSlider from "../image-slider"
+
+export default function Layout() {
+  return (
+    <div className="container py-4">
+      <h1 className="text-center mb-4">Bootstrap Image Slider</h1>
+      <ImageSlider />
+    </div>
+  )
+}
+

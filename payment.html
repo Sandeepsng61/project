@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>💳 Payment - SS PC Assembler</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+        .container {
+            margin-top: 50px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .payment-method {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container col-md-6 offset-md-3">
+        <h3 class="mb-4 text-center">🧾 Payment Portal</h3>
+        <p class="text-muted">Please complete your payment to place the order.</p>
+        <form id="paymentForm">
+            <div class="mb-3">
+                <label for="paymentMode" class="form-label">Select Payment Method</label>
+                <select class="form-select" id="paymentMode" required>
+                    <option value="">-- Select --</option>
+                    <option value="upi">UPI</option>
+                    <option value="card">Credit/Debit Card</option>
+                </select>
+            </div>
+
+            <div id="upiSection" class="payment-method">
+                <label class="form-label">Enter UPI ID</label>
+                <input type="text" class="form-control mb-3" placeholder="example@upi">
+            </div>
+
+            <div id="cardSection" class="payment-method">
+                <label class="form-label">Card Number</label>
+                <input type="text" class="form-control mb-2" placeholder="xxxx-xxxx-xxxx-xxxx">
+                <label class="form-label">Expiry</label>
+                <input type="text" class="form-control mb-2" placeholder="MM/YY">
+                <label class="form-label">CVV</label>
+                <input type="password" class="form-control mb-2" placeholder="123">
+            </div>
+
+            <button id="pay-btn" type="submit" class="btn btn-primary w-100 mt-3">
+                💰 Pay ₹<span id="payAmount">0</span>
+            </button>
+
+
+        </form>
+    </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let userDetails = JSON.parse(localStorage.getItem("userDetails")) || {};
+    let totalPrice = localStorage.getItem("totalPrice");
+    document.getElementById("payAmount").textContent = totalPrice;
+
+    // Show UPI/card fields on method change
+    document.getElementById("paymentMode").addEventListener("change", function () {
+        document.querySelectorAll(".payment-method").forEach(el => el.style.display = "none");
+        const mode = this.value;
+        if (mode === "upi") {
+            document.getElementById("upiSection").style.display = "block";
+        } else if (mode === "card") {
+            document.getElementById("cardSection").style.display = "block";
+        }
+    });
+
+    document.getElementById("paymentForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let order = {
+            name: userDetails.fullName,
+            email: userDetails.email,
+            address: userDetails.address,
+            paymentMethod: document.getElementById("paymentMode").value,
+            cart: cart,
+            totalPrice: parseFloat(totalPrice),
+            orderId: "ORD" + Math.floor(1000 + Math.random() * 9000),
+            date: new Date().toLocaleString()
+        };
+
+        fetch("/submit-order", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(order)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === "success") {
+                alert("✅ Payment successful!");
+                window.location.href = "/confirmation";
+            } else {
+                alert("❌ Order failed!");
+            }
+        })
+        .catch(err => {
+            console.error("Error:", err);
+            alert("🚫 Something went wrong!");
+        });
+    });
+});
+</script>      
+</body>
+</html>

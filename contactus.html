@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SS PC Assembler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .store-image {
+            width: 100%;
+            max-width: 500px; /* Adjust size */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .contact-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+        .info {
+            flex: 1;
+            padding: 20px;
+        }
+        .map {
+            flex: 1;
+            padding: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+        }
+        .contact-info {
+            font-size: 18px;
+            color: #555;
+        }
+        .contact-info strong {
+            color: #333;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .contact-details {
+                flex-direction: column;
+            }
+            .info, .map {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <img src="{{ url_for('static', filename='poster.png') }}" alt="SS PC Assembler Store" class="store-image">
+
+        <div class="contact-details">
+            <div class="info">
+                <h2>SS PC Assembler PGI Store</h2>
+                <p class="contact-info"><strong>Address:</strong> A156 Kalpana Estate Sahu Colony Raibareli Road ,Lucknow,226014</p>
+                <p class="contact-info"><strong>Phone:</strong> +91-9519263124</p>
+                <p class="contact-info"><strong>Email:</strong> support@sspcassembler.com</p>
+                <p class="contact-info"><strong>Hours:</strong></p>
+                <ul class="contact-info">
+                    <li>Monday - Saturday: 10:00 AM - 8:00 PM</li>
+                    <li>Sunday: Closed</li>
+                </ul>
+            </div>
+
+            <div class="map">
+                <h2>Find Us Here</h2>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1840.113233643702!2d80.94668843466448!3d26.737943792191086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1742898292385!5m2!1sen!2sin" 
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 SS PC Assembler. All rights reserved.
+    </div>
+
+</body>
+</html>

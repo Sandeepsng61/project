@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Consoles</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Gaming Consoles Section */
+        .gaming-consoles {
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+        }
+
+        /* Console Cards Container */
+        .console-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Individual Console Card */
+        .console-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 300px;
+        }
+
+        .console-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Console Images */
+        .console-card img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Console Title */
+        .console-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        /* Console Description */
+        .console-card p {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        /* Price Styling */
+        .console-card .price {
+            font-size: 1.3rem;
+            color: #28a745;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Add to Cart Button */
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Gaming Consoles Section -->
+    <section class="gaming-consoles">
+        <h2>Best Gaming Consoles</h2>
+        <p>Discover the latest gaming consoles at the best prices!</p>
+
+        <div class="console-container">
+            <!-- PlayStation 5 Card -->
+            <div class="console-card">
+                <img src="images/ps5.jpg" alt="PlayStation 5">
+                <h3>PlayStation 5</h3>
+                <p>Experience ultra-fast load times and stunning graphics.</p>
+                <span class="price">₹54900</span>
+                <button class="btn-primary">Add to Cart</button>
+            </div>
+
+            <!-- Xbox Series X Card -->
+            <div class="console-card">
+                <img src="images/xbox_series_x.jpg" alt="Xbox Series X">
+                <h3>Xbox Series X</h3>
+                <p>Enjoy 4K gaming with the most powerful Xbox ever.</p>
+                <span class="price">₹32490</span>
+                <button class="btn-primary">Add to Cart</button>
+            </div>
+
+            <!-- Nintendo Switch Card -->
+            <div class="console-card">
+                <img src="images/nintendo_switch.jpg" alt="Nintendo Switch">
+                <h3>Nintendo Switch</h3>
+                <p>Portable and versatile gaming for all ages.</p>
+                <span class="price">₹16900</span>
+                <button class="btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
